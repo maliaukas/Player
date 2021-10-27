@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.SongDetailFragment">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_song_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="@dimen/large_text_size"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_split"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintStart_toEndOf="@id/iv_song_detail_image"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="SONG TITLE - ARTIST" />
+
+    <ImageView
+        android:id="@+id/iv_song_detail_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="@dimen/margin"
+        android:contentDescription="@string/song_image_description"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/guideline_split"
+        app:layout_constraintDimensionRatio="h,1:1"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/backgrounds/scenic" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_cur_time"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/margin"
+        android:gravity="start"
+        android:textSize="@dimen/smaller_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/seek_bar"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toTopOf="@+id/seek_bar"
+        tools:text="00:00" />
+
+    <SeekBar
+        android:id="@+id/seek_bar"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/small_text_size"
+        android:layout_marginTop="@dimen/double_margin"
+        app:layout_constraintBottom_toTopOf="@id/ib_play_pause_detail"
+        app:layout_constraintEnd_toStartOf="@+id/tv_song_duration"
+        app:layout_constraintStart_toEndOf="@+id/tv_cur_time"
+        app:layout_constraintTop_toTopOf="@+id/guideline_split"
+        app:layout_constraintVertical_chainStyle="spread" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tv_song_duration"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/margin"
+        android:gravity="end"
+        android:textSize="@dimen/smaller_text_size"
+        app:layout_constraintBottom_toBottomOf="@+id/seek_bar"
+        app:layout_constraintEnd_toEndOf="@id/guideline_end"
+        app:layout_constraintTop_toTopOf="@+id/seek_bar"
+        tools:text="00:00" />
+
+    <ImageButton
+        android:id="@+id/ib_play_pause_detail"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:background="@drawable/circle_drawable"
+        android:contentDescription="@string/play_pause_button_description"
+        android:src="@drawable/ic_play"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seek_bar" />
+
+    <ImageButton
+        android:id="@+id/ib_skip_previous"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="16dp"
+        android:background="@color/transparent"
+        android:contentDescription="@string/skip_previous_button_description"
+        android:src="@drawable/exo_ic_skip_previous"
+        app:layout_constraintBottom_toBottomOf="@+id/ib_play_pause_detail"
+        app:layout_constraintEnd_toStartOf="@+id/ib_play_pause_detail"
+        app:layout_constraintTop_toTopOf="@+id/ib_play_pause_detail"
+        app:tint="@color/black" />
+
+    <ImageButton
+        android:id="@+id/ib_skip_next"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:background="@color/transparent"
+        android:contentDescription="@string/skip_next_button_description"
+        android:src="@drawable/exo_ic_skip_next"
+        app:layout_constraintBottom_toBottomOf="@+id/ib_play_pause_detail"
+        app:layout_constraintStart_toEndOf="@+id/ib_play_pause_detail"
+        app:layout_constraintTop_toTopOf="@+id/ib_play_pause_detail"
+        app:tint="@color/black" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_split"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.50" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95" />
+</androidx.constraintlayout.widget.ConstraintLayout>

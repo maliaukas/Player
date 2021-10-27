@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/songListFragment">
+
+    <fragment
+        tools:layout="@layout/fragment_song_detail"
+        android:id="@+id/songDetailFragment"
+        android:name="maliauka.sasha.player.ui.fragments.SongDetailFragment"
+        android:label="PlayerFragment" />
+
+    <fragment
+        android:id="@+id/songListFragment"
+        android:name="maliauka.sasha.player.ui.fragments.SongListFragment"
+        android:label="song_list_fragment"
+        tools:layout="@layout/fragment_song_list" />
+
+    <action android:id="@+id/globalActionToSongDetailFragment"
+        app:destination="@id/songDetailFragment"/>
+
+</navigation>

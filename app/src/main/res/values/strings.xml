@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Player</string>
+
+    <string name="channel_name">Player channel</string>
+    <string name="channel_description">Needed for music player notification</string>
+
+    <string name="song_image_description">Song image</string>
+
+    <string name="play_pause_button_description">Play or pause current song</string>
+    <string name="skip_previous_button_description">Go to previous song</string>
+    <string name="skip_next_button_description">Go to next song</string>
+    <string name="error_message">An error occurred!</string>
+</resources>
